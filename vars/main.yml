@@ -1,7 +1,0 @@
----
-package: collectd
-collectd_dir:  /etc/collectd
-plugin_conf_dir: "{{ collectd_dir }}/conf.d"
-service_name: collectd
-config_file: /etc/collectd.conf
-root_group: root
