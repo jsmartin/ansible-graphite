@@ -13,7 +13,7 @@ carbon_service: carbon-cache
 carbon_storage_dir: /var/lib/carbon
 carbon_user: carbon
 graphite_conf: /etc/graphite-web
-graphite_content_dir: "/usr/share/graphite-web/static"
+graphite_content_dir: /usr/share/graphite/webapp/content
 graphite_index_file: "{{ graphite_var }}/search_index"
 graphite_log_dir: /var/log/graphite-web
 graphite_python: /usr/lib/python2.6/site-packages/graphite
