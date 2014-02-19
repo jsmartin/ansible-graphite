@@ -25,7 +25,7 @@ Role Variables
 `vars/[Debian, RedHat].yml`
 
 | Name           | Description      |
-|-----------------------------------|
+|----------------|------------------|
 | apache_service | name of apache service |
 |carbon_local_data_dir | carbon's data dir |
 | packages       | package dependencies for graphite |
