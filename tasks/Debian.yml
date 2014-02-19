@@ -1,0 +1,17 @@
+- name: setup custom repo
+  apt: pkg=python-pycurl state=present
+- apt_repository: repo='ppa:jmartin-1/tools'
+
+- name: enable carbon
+  copy: dest=/etc/default/graphite-carbon content='CARBON_CACHE_ENABLED=true'
+
+- name: install graphite and deps
+  apt: name={{ item }} state=present
+  with_items: packages
+
+- name: setup apache
+  copy: src=apache2-graphite.conf dest=/etc/apache2/sites-available/default
+  notify: restart apache
+
+- name: configure wsgi
+  file: path=/etc/apache2/wsgi state=directory

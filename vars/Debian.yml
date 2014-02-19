@@ -1,0 +1,25 @@
+packages:
+  - apache2
+  - graphite-web
+  - graphite-carbon
+  - libapache2-mod-wsgi
+  - mysql-server
+  - python-mysqldb
+  - python-yaml
+
+
+apache_service: apache2
+carbon_local_data_dir: /var/lib/graphite/whisper/
+carbon_service: carbon-cache
+carbon_storage_dir: /var/lib/carbon/
+carbon_user: _graphite
+graphite_conf: /etc/graphite
+graphite_content_dir: "/usr/share/graphite-web/static"
+graphite_index_file: "{{ graphite_var }}/search_index"
+graphite_log_dir: /var/log/graphite
+graphite_python: /usr/share/pyshared/graphite
+graphite_storage_dir: "{{ carbon_local_data_dir }}"
+graphite_user: _graphite
+graphite_var: /var/lib/graphite
+graphite_whisper_dir: "{{ carbon_local_data_dir }}"
+mysql_service: mysql

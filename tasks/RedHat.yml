@@ -1,0 +1,7 @@
+- name: fetch EPEL repository
+  yum: name=http://mirror.pnl.gov/epel/6/i386/epel-release-6-8.noarch.rpm
+
+- name: install graphite and deps
+  yum: name="{{ item }}" state=present
+  with_items: packages
+

@@ -1,0 +1,24 @@
+packages:
+  - graphite-web
+  - httpd
+  - python-carbon
+  - mysql-server
+  - MySQL-python
+  - python-yaml
+  - libselinux-python
+
+apache_service: httpd
+carbon_local_data_dir: /var/lib/carbon/whisper
+carbon_service: carbon-cache
+carbon_storage_dir: /var/lib/carbon
+carbon_user: carbon
+graphite_conf: /etc/graphite-web
+graphite_content_dir: "/usr/share/graphite-web/static"
+graphite_index_file: "{{ graphite_var }}/search_index"
+graphite_log_dir: /var/log/graphite-web
+graphite_python: /usr/lib/python2.6/site-packages/graphite
+graphite_storage_dir: "{{ carbon_local_data_dir }}"
+graphite_user: apache
+graphite_var: /var/lib/graphite-web
+graphite_whisper_dir: "{{ carbon_local_data_dir }}"
+mysql_service: mysqld
